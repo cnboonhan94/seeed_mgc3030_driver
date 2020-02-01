@@ -1,7 +1,7 @@
 # Seeed mgc3130 ROS driver
 ![demo.gif](demo.gif)
 
-ROS interface for data output from the [Seeed mgc3130](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [github](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). plugged into a Raspberry Pi.
+ROS driver for the [Seeed mgc3130 3D hand tracking Pi Shield](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [Github link](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). 
 
 ## Setup instructions
 1. Set up a Raspberry Pi with a ROS1 distribution. You can folllow these [instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi). Another option is to use Ubiquity Robotics [Pi Image](https://downloads.ubiquityrobotics.com/pi.html), and run the following:
@@ -9,7 +9,7 @@ ROS interface for data output from the [Seeed mgc3130](http://wiki.seeedstudio.c
 sudo systemctl disable pifi.service
 sudo systemctl disable magni-base.service
 ``` 
-This option has the benefit of having a `roscore` automatically launch at boot using systemd.
+This option has the benefit of already having a `roscore` configured to automatically launch at boot using systemd.
 
 2. Clone this repository into a workspace:
 ```
