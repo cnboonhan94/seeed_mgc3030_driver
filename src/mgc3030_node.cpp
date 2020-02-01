@@ -194,9 +194,12 @@ int main(int argc, char **argv)
     ros::Publisher touch_pub = n.advertise<std_msgs::String>(touch_topic_name, 1);
     ros::Subscriber reset_sub = n.subscribe<std_msgs::String>(reset_topic_name,1, reset_callback);
 
-    if (hardware_reset() == -1){ 
-        ROS_INFO("Hardware has errors, shutting down..");
-        return -1;
+    while(1){
+        if (hardware_reset() == -1){ 
+            ROS_INFO("Hardware has errors, retrying..");
+        } else {
+        break;
+        }
     }
 
     while(ros::ok()){
