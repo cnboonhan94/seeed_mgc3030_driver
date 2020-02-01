@@ -1,4 +1,5 @@
 # Seeed mgc3130 ROS driver
+![demo.gif](demo.gif)
 ROS interface for data output from the [Seeed mgc3130](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [github](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). plugged into a Raspberry Pi.
 
 ## Setup instructions
@@ -29,6 +30,11 @@ catkin build
 source devel/setup.bash
 roslaunch seeed_mgc3030_driver mgc3030.launch
 rviz
+```
+
+4. To force a recalibration, you can do:
+```
+rostopic pub /mgc3030/reset std_msgs/String "type anything here"
 ```
 
 ## Parameters
