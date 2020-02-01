@@ -8621,6 +8621,7 @@ Panel_Userptr	external/ncurses-6.1/Ada95/src/terminal_interface-curses-panels-us
 Panel_Win	external/ncurses-6.1/Ada95/src/terminal_interface-curses-panels.adb	/^      function Panel_Win (Pan : Panel) return Window;$/;"	R	subprogram:Get_Window	file:
 Panels, Input, and the Standard Screen	external/ncurses-6.1/doc/html/ncurses-intro.html	/^  Standard Screen<\/a><\/h2>$/;"	i
 Parameterized Strings	external/ncurses-6.1/doc/html/man/terminfo.5.html	/^<\/PRE><H3><a name="h3-Parameterized-Strings">Parameterized Strings<\/a><\/H3><PRE>$/;"	j
+Parameters	README.md	/^## Parameters$/;"	s
 PassiveItem	external/ncurses-6.1/c++/demo.cc	/^  PassiveItem(const char* text) : NCursesMenuItem(text) {$/;"	f	class:PassiveItem	file:
 PassiveItem	external/ncurses-6.1/c++/demo.cc	/^class PassiveItem : public NCursesMenuItem$/;"	c	file:
 Pattern	external/ncurses-6.1/Ada95/src/terminal_interface-curses-menus.adb	/^   procedure Pattern (Men  : Menu;$/;"	r	package:Terminal_Interface.Curses.Menus	file:
