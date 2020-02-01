@@ -13888,10 +13888,8 @@ curscr	external/ncurses-6.1/include/curses.h	/^#define curscr /;"	d
 curscr	external/ncurses-6.1/include/curses.h.in	/^#define curscr /;"	d	file:
 curse_init	external/Seeed_mgc3x30/main.c	/^void curse_init(void)$/;"	f	typeref:typename:void
 curse_init	src/main.c	/^void curse_init(void)$/;"	f	typeref:typename:void
-curse_init	src/mgc3030_node.cpp	/^void curse_init(void)$/;"	f	typeref:typename:void
 curse_init_show	external/Seeed_mgc3x30/main.c	/^void curse_init_show(void)$/;"	f	typeref:typename:void
 curse_init_show	src/main.c	/^void curse_init_show(void)$/;"	f	typeref:typename:void
-curse_init_show	src/mgc3030_node.cpp	/^void curse_init_show(void)$/;"	f	typeref:typename:void
 curses	external/ncurses-6.1/doc/html/ncurses-intro.html	/^  <h1><a name="curses" id="curses">The Curses Library<\/a><\/h1>$/;"	I
 curses	external/ncurses-6.1/doc/html/ncurses-intro.html	/^  <h1><a name="curses" id="curses">The Curses Library<\/a><\/h1>$/;"	a
 curses-h	external/ncurses-6.1/configure.in	/^AC_ARG_WITH(curses-h,$/;"	w
@@ -14383,7 +14381,6 @@ draw_line	external/ncurses-6.1/test/list_keys.c	/^draw_line(int width)$/;"	f	typ
 draw_part	external/ncurses-6.1/test/rain.c	/^draw_part(void (*func) (DATA *), int state, DATA * data)$/;"	f	typeref:typename:void	file:
 draw_rectangle	external/Seeed_mgc3x30/main.c	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
 draw_rectangle	src/main.c	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
-draw_rectangle	src/mgc3030_node.cpp	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
 draw_worm	external/ncurses-6.1/test/worm.c	/^draw_worm(WINDOW *win, void *data)$/;"	f	typeref:typename:int	file:
 drawbox	external/ncurses-6.1/test/gdc.c	/^drawbox(bool scrolling)$/;"	f	typeref:typename:void	file:
 drcNetComStruct	external/WiringPi/wiringPiD/drcNetCmd.h	/^struct drcNetComStruct$/;"	s
@@ -18040,7 +18037,7 @@ main	external/ncurses-6.1/test/view.c	/^main(int argc, char *argv[])$/;"	f	typer
 main	external/ncurses-6.1/test/worm.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
 main	external/ncurses-6.1/test/xmas.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
 main	src/main.c	/^int main(void)$/;"	f	typeref:typename:int
-main	src/mgc3030_node.cpp	/^int main(void)$/;"	f	typeref:typename:int
+main	src/mgc3030_node.cpp	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
 main_menu	external/ncurses-6.1/test/ncurses.c	/^main_menu(bool top)$/;"	f	typeref:typename:void	file:
 make_changelog	external/ncurses-6.1/Ada95/make-tar.sh	/^make_changelog() {$/;"	f
 make_changelog	external/ncurses-6.1/test/make-tar.sh	/^make_changelog() {$/;"	f
@@ -19720,6 +19717,10 @@ ptr_strcodes	external/ncurses-6.1/ncurses/codes.c	/^static NCURSES_CONST char **
 ptr_strfnames	external/ncurses-6.1/ncurses/names.c	/^static NCURSES_CONST char ** ptr_strfnames = 0;$/;"	v	typeref:typename:NCURSES_CONST char **	file:
 ptr_strnames	external/ncurses-6.1/ncurses/names.c	/^static NCURSES_CONST char ** ptr_strnames = 0;$/;"	v	typeref:typename:NCURSES_CONST char **	file:
 ptr_termdata	external/ncurses-6.1/progs/toe.c	/^static TERMDATA *ptr_termdata;	\/* array of terminal data *\/$/;"	v	typeref:typename:TERMDATA *	file:
+publish_location_xyz	src/mgc3030_node.cpp	/^void publish_location_xyz(uint8_t *data, ros::Publisher *pub)$/;"	f	typeref:typename:void
+publish_sensor_msg	src/mgc3030_node.cpp	/^int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub)$/;"	f	typeref:typename:int32_t
+publish_touch	src/mgc3030_node.cpp	/^void publish_touch(uint8_t gesture, ros::Publisher *pub)$/;"	f	typeref:typename:void
+publish_touch_event	src/mgc3030_node.cpp	/^void publish_touch_event(uint8_t *data, ros::Publisher *pub)$/;"	f	typeref:typename:void
 pullUpDnControl	external/WiringPi/wiringPi/wiringPi.c	/^void pullUpDnControl (int pin, int pud)$/;"	f	typeref:typename:void
 pullUpDnControl	external/WiringPi/wiringPi/wiringPi.h	/^           void   (*pullUpDnControl)  (struct wiringPiNodeStruct *node, int pin, int mode) ;$/;"	m	struct:wiringPiNodeStruct	typeref:typename:void (*)(struct wiringPiNodeStruct * node,int pin,int mode)
 pullUpDnControlDummy	external/WiringPi/wiringPi/wiringPi.c	/^static         void pullUpDnControlDummy     (UNU struct wiringPiNodeStruct *node, UNU int pin, /;"	f	typeref:typename:void	file:
@@ -26107,6 +26108,7 @@ touch_cnt	src/mgc3030_node.cpp	/^uint8_t touch_cnt;$/;"	v	typeref:typename:uint8
 touch_detection_select	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t touch_detection_select(Enable_t flag)$/;"	f	typeref:typename:int32_t
 touch_if_needed	external/ncurses-6.1/test/chgat.c	/^#define touch_if_needed(/;"	d	file:
 touch_info	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^static char *touch_info[16] ={"South  ","West  ","North  ","East  ","Center  ","South  ","West  /;"	v	typeref:typename:char * [16]	file:
+touch_info	src/mgc3030_node.cpp	/^static const char *touch_info[16] ={"South","West","North","East","Center","South","West","North/;"	v	typeref:typename:const char * [16]	file:
 touchline	external/ncurses-6.1/c++/cursesw.h	/^  int            touchline(int s, int c) { return ::touchline(w, s, c); }$/;"	f	class:NCursesWindow	typeref:typename:int
 touchline	external/ncurses-6.1/c++/cursesw.h	/^#define touchline /;"	d
 touchline	external/ncurses-6.1/include/curses.h	/^#define touchline(/;"	d
