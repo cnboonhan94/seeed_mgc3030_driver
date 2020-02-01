@@ -1,5 +1,6 @@
 # Seeed mgc3130 ROS driver
 ![demo.gif](demo.gif)
+
 ROS interface for data output from the [Seeed mgc3130](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [github](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). plugged into a Raspberry Pi.
 
 ## Setup instructions
