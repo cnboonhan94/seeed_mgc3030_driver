@@ -9862,6 +9862,8 @@ ads1115Setup	external/WiringPi/wiringPi/ads1115.c	/^int ads1115Setup (const int 
 after	external/ncurses-6.1/Ada95/samples/ncurses2-demo_pad.adb	/^      before, after : timestruct;$/;"	v	subprogram:panner	file:
 after_load	external/ncurses-6.1/test/savescreen.c	/^after_load(void)$/;"	f	typeref:typename:void	file:
 air_wheel_cnt	external/Seeed_mgc3x30/main.c	/^uint8_t air_wheel_cnt;$/;"	v	typeref:typename:uint8_t
+air_wheel_cnt	src/main.c	/^uint8_t air_wheel_cnt;$/;"	v	typeref:typename:uint8_t
+air_wheel_cnt	src/mgc3030_node.cpp	/^uint8_t air_wheel_cnt;$/;"	v	typeref:typename:uint8_t
 air_wheel_select	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t air_wheel_select(Enable_t flag)$/;"	f	typeref:typename:int32_t
 alias	external/ncurses-6.1/include/tic.h	/^struct alias$/;"	s
 alias_table_data	external/ncurses-6.1/ncurses/curses.priv.h	/^} alias_table_data;$/;"	t	typeref:struct:__anonb0c07ad71308
@@ -10466,6 +10468,8 @@ clear$x	external/ncurses-6.1/progs/Makefile.in	/^clear$x: $(DEPS_CLEAR) $(DEPS_C
 clearKeypressed	external/WiringPi/examples/PiGlow/piGlow1.c	/^static void clearKeypressed (void)$/;"	f	typeref:typename:void	file:
 clear_cmd	external/ncurses-6.1/progs/clear_cmd.c	/^clear_cmd(bool legacy)$/;"	f	typeref:typename:int
 clear_data_periodly	external/Seeed_mgc3x30/main.c	/^void clear_data_periodly(void)$/;"	f	typeref:typename:void
+clear_data_periodly	src/main.c	/^void clear_data_periodly(void)$/;"	f	typeref:typename:void
+clear_data_periodly	src/mgc3030_node.cpp	/^void clear_data_periodly(void)$/;"	f	typeref:typename:void
 clear_overlap	external/ncurses-6.1/test/ncurses.c	/^clear_overlap(void)$/;"	f	typeref:typename:void	file:
 clearok	external/ncurses-6.1/c++/cursesw.h	/^  int            clearok(bool bf) { return ::clearok(w, bf); }$/;"	f	class:NCursesWindow	typeref:typename:int
 clearok	external/ncurses-6.1/c++/cursesw.h	/^#define clearok /;"	d
@@ -10757,7 +10761,11 @@ curs_variables 3x	external/ncurses-6.1/doc/html/man/curs_variables.3x.html	/^<H1
 curs_window 3x	external/ncurses-6.1/doc/html/man/curs_window.3x.html	/^<H1 class="no-header">curs_window 3x<\/H1>$/;"	h
 curscr	external/ncurses-6.1/include/curses.h.in	/^#define curscr /;"	d	file:
 curse_init	external/Seeed_mgc3x30/main.c	/^void curse_init(void)$/;"	f	typeref:typename:void
+curse_init	src/main.c	/^void curse_init(void)$/;"	f	typeref:typename:void
+curse_init	src/mgc3030_node.cpp	/^void curse_init(void)$/;"	f	typeref:typename:void
 curse_init_show	external/Seeed_mgc3x30/main.c	/^void curse_init_show(void)$/;"	f	typeref:typename:void
+curse_init_show	src/main.c	/^void curse_init_show(void)$/;"	f	typeref:typename:void
+curse_init_show	src/mgc3030_node.cpp	/^void curse_init_show(void)$/;"	f	typeref:typename:void
 curses	external/ncurses-6.1/doc/html/ncurses-intro.html	/^  <h1><a name="curses" id="curses">The Curses Library<\/a><\/h1>$/;"	I
 curses	external/ncurses-6.1/doc/html/ncurses-intro.html	/^  <h1><a name="curses" id="curses">The Curses Library<\/a><\/h1>$/;"	a
 curses-h	external/ncurses-6.1/configure.in	/^AC_ARG_WITH(curses-h,$/;"	w
@@ -10808,6 +10816,8 @@ data	external/ncurses-6.1/include/curses.h.in	/^    } data;$/;"	m	struct:__anon9
 data	external/ncurses-6.1/ncurses/curses.priv.h	/^	} data;$/;"	m	struct:__anonb0c07ad70a08	typeref:union:__anonb0c07ad70a08::__anonb0c07ad70b0a
 data	external/ncurses-6.1/test/ditto.c	/^    int data[MAX_FIFO];$/;"	m	struct:__anond1abb70f0108	typeref:typename:int[]	file:
 data	external/ncurses-6.1/test/picsmap.c	/^    size_t data;$/;"	m	struct:__anon424fd5580108	typeref:typename:size_t	file:
+data	src/main.c	/^static uint8_t data[MAX_RECV_LEN];$/;"	v	typeref:typename:uint8_t[]	file:
+data	src/mgc3030_node.cpp	/^static uint8_t data[MAX_RECV_LEN];$/;"	v	typeref:typename:uint8_t[]	file:
 data0	external/WiringPi/wiringPi/wiringPi.h	/^  unsigned int data0 ;	\/\/  ditto$/;"	m	struct:wiringPiNodeStruct	typeref:typename:unsigned int
 data1	external/WiringPi/wiringPi/wiringPi.h	/^  unsigned int data1 ;	\/\/  ditto$/;"	m	struct:wiringPiNodeStruct	typeref:typename:unsigned int
 data2	external/WiringPi/wiringPi/wiringPi.h	/^  unsigned int data2 ;	\/\/  ditto$/;"	m	struct:wiringPiNodeStruct	typeref:typename:unsigned int
@@ -11154,6 +11164,8 @@ draw_drop	external/ncurses-6.1/test/rain.c	/^draw_drop(void *arg)$/;"	f	typeref:
 draw_line	external/ncurses-6.1/test/list_keys.c	/^draw_line(int width)$/;"	f	typeref:typename:void	file:
 draw_part	external/ncurses-6.1/test/rain.c	/^draw_part(void (*func) (DATA *), int state, DATA * data)$/;"	f	typeref:typename:void	file:
 draw_rectangle	external/Seeed_mgc3x30/main.c	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
+draw_rectangle	src/main.c	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
+draw_rectangle	src/mgc3030_node.cpp	/^void draw_rectangle(void)$/;"	f	typeref:typename:void
 draw_worm	external/ncurses-6.1/test/worm.c	/^draw_worm(WINDOW *win, void *data)$/;"	f	typeref:typename:int	file:
 drawbox	external/ncurses-6.1/test/gdc.c	/^drawbox(bool scrolling)$/;"	f	typeref:typename:void	file:
 drcNetComStruct	external/WiringPi/wiringPiD/drcNetCmd.h	/^struct drcNetComStruct$/;"	s
@@ -11804,6 +11816,8 @@ gertboardAnalogSetup	external/WiringPi/devLib/gertboard.c	/^int gertboardAnalogS
 gertboardAnalogWrite	external/WiringPi/devLib/gertboard.c	/^void gertboardAnalogWrite (const int chan, const int value)$/;"	f	typeref:typename:void
 gertboardSPISetup	external/WiringPi/devLib/gertboard.c	/^int gertboardSPISetup (void)$/;"	f	typeref:typename:int
 ges_cnt	external/Seeed_mgc3x30/main.c	/^uint8_t ges_cnt;$/;"	v	typeref:typename:uint8_t
+ges_cnt	src/main.c	/^uint8_t ges_cnt;$/;"	v	typeref:typename:uint8_t
+ges_cnt	src/mgc3030_node.cpp	/^uint8_t ges_cnt;$/;"	v	typeref:typename:uint8_t
 gestrue_select	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t gestrue_select(Gesture_select_t flag)$/;"	f	typeref:typename:int32_t
 gesture	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.h	/^    Gest_t gesture;$/;"	m	struct:__anon56160a770608	typeref:typename:Gest_t
 getAlt	external/WiringPi/wiringPi/wiringPi.c	/^int getAlt (int pin)$/;"	f	typeref:typename:int
@@ -14069,6 +14083,7 @@ m_value	external/ncurses-6.1/test/demo_forms.c	/^static int m_value = 0;$/;"	v	t
 macros	external/ncurses-6.1/Ada95/configure.in	/^AC_ARG_ENABLE(macros,$/;"	e
 macros	external/ncurses-6.1/configure.in	/^AC_ARG_ENABLE(macros,$/;"	e
 magic	external/ncurses-6.1/ncurses/curses.priv.h	/^    long          magic;$/;"	m	struct:DriverTCB	typeref:typename:long
+main	CMakeLists.txt	/^add_executable(main src\/main.c ${SRC_FILES}) $/;"	t
 main	external/Seeed_mgc3x30/main.c	/^int main(void)$/;"	f	typeref:typename:int
 main	external/WiringPi/examples/Gertboard/7segments.c	/^int main (void)$/;"	f	typeref:typename:int
 main	external/WiringPi/examples/Gertboard/buttons.c	/^int main (void)$/;"	f	typeref:typename:int
@@ -14260,6 +14275,8 @@ main	external/ncurses-6.1/test/testscanw.c	/^main(int argc, char *argv[])$/;"	f	
 main	external/ncurses-6.1/test/view.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
 main	external/ncurses-6.1/test/worm.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
 main	external/ncurses-6.1/test/xmas.c	/^main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	src/main.c	/^int main(void)$/;"	f	typeref:typename:int
+main	src/mgc3030_node.cpp	/^int main(void)$/;"	f	typeref:typename:int
 main_menu	external/ncurses-6.1/test/ncurses.c	/^main_menu(bool top)$/;"	f	typeref:typename:void	file:
 make_changelog	external/ncurses-6.1/Ada95/make-tar.sh	/^make_changelog() {$/;"	f
 make_changelog	external/ncurses-6.1/test/make-tar.sh	/^make_changelog() {$/;"	f
@@ -14466,6 +14483,7 @@ mft	external/ncurses-6.1/c++/demo.cc	/^  MyFieldType* mft;$/;"	m	class:TestForm	
 mg3030_read_data	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t mg3030_read_data(void *data)$/;"	f	typeref:typename:int32_t
 mg3030_set_runtime_param	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t mg3030_set_runtime_param(uint16_t run_time_id,uint32_t arg0,uint32_t arg1)$/;"	f	typeref:typename:int32_t
 mgc3030_init	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^void mgc3030_init(void)$/;"	f	typeref:typename:void
+mgc3030_node	CMakeLists.txt	/^add_executable(mgc3030_node src\/mgc3030_node.cpp ${SRC_FILES}) $/;"	t
 mgc_exit	external/Seeed_mgc3x30/src/platform_basic_func.c	/^void mgc_exit(void)$/;"	f	typeref:typename:void
 mgc_info	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^Sensor_info_t mgc_info;$/;"	v	typeref:typename:Sensor_info_t
 mheight	external/ncurses-6.1/progs/infocmp.c	/^static int mheight = 65535;$/;"	v	typeref:typename:int	file:
@@ -15624,6 +15642,8 @@ portx	external/ncurses-6.1/Ada95/samples/ncurses2-demo_pad.adb	/^      portx : C
 porty	external/ncurses-6.1/Ada95/samples/ncurses2-demo_pad.adb	/^      porty : Line_Position := portyp;$/;"	v	subprogram:panner	file:
 pos	external/ncurses-6.1/Ada95/samples/ncurses2-acs_and_scroll.adb	/^      pos : Natural;$/;"	v	subprogram:newwin_legend	file:
 pos_cnt	external/Seeed_mgc3x30/main.c	/^uint8_t pos_cnt;$/;"	v	typeref:typename:uint8_t
+pos_cnt	src/main.c	/^uint8_t pos_cnt;$/;"	v	typeref:typename:uint8_t
+pos_cnt	src/mgc3030_node.cpp	/^uint8_t pos_cnt;$/;"	v	typeref:typename:uint8_t
 pos_menu_cursor	external/ncurses-6.1/menu/m_cursor.c	/^pos_menu_cursor(const MENU * menu)$/;"	f	typeref:typename:int
 position_check	external/ncurses-6.1/ncurses/tty/tty_update.c	/^#define position_check(/;"	d	file:
 position_check	external/ncurses-6.1/ncurses/tty/tty_update.c	/^position_check(NCURSES_SP_DCLx int expected_y, int expected_x, char *legend)$/;"	f	typeref:typename:void	file:
@@ -21890,6 +21910,8 @@ total_values	external/ncurses-6.1/test/test_sgr.c	/^static long total_values;$/;
 touch	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.h	/^    Touch_t touch;$/;"	m	struct:__anon56160a770608	typeref:typename:Touch_t
 touch	external/ncurses-6.1/c++/cursslk.h	/^  inline void touch() {$/;"	f	class:Soft_Label_Key_Set	typeref:typename:void
 touch_cnt	external/Seeed_mgc3x30/main.c	/^uint8_t touch_cnt;$/;"	v	typeref:typename:uint8_t
+touch_cnt	src/main.c	/^uint8_t touch_cnt;$/;"	v	typeref:typename:uint8_t
+touch_cnt	src/mgc3030_node.cpp	/^uint8_t touch_cnt;$/;"	v	typeref:typename:uint8_t
 touch_detection_select	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^int32_t touch_detection_select(Enable_t flag)$/;"	f	typeref:typename:int32_t
 touch_if_needed	external/ncurses-6.1/test/chgat.c	/^#define touch_if_needed(/;"	d	file:
 touch_info	external/Seeed_mgc3x30/src/Seeed_3D_touch_mgc3030.c	/^static char *touch_info[16] ={"South  ","West  ","North  ","East  ","Center  ","South  ","West  /;"	v	typeref:typename:char * [16]	file:

@@ -22,10 +22,22 @@ target_link_libraries(main
     m
     )
 
-install(TARGETS main
+add_executable(mgc3030_node src/mgc3030_node.cpp ${SRC_FILES}) 
+target_include_directories(mgc3030_node PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/external/Seeed_mgc3x30>
+    )
+target_link_libraries(mgc3030_node 
+    wiringPi 
+    curses
+    crypt
+    pthread
+    rt
+    m
+    )
+
+install(TARGETS main mgc3030_node
     ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
     )
 
-message(${CATKIN_PACKAGE_BIN_DESTINATION})
