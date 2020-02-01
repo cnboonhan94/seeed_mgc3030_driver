@@ -4,7 +4,7 @@
   <version>0.0.0</version>
   <description>3D hand tracking for the mgc3030 by Seeed</description>
   <maintainer email="cnboonhan94@gmail.com">Charayaphan Nakorn Boon Han</maintainer>
-  <license>Apache 2.0</license>
+  <license>MIT License</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 

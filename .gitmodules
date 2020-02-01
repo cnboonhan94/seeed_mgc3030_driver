@@ -1,3 +1,6 @@
 [submodule "external/WiringPi"]
 	path = external/WiringPi
 	url = https://github.com/WiringPi/WiringPi.git
+[submodule "external/Seeed_mgc3x30"]
+	path = external/Seeed_mgc3x30
+	url = https://github.com/Seeed-Studio/Seeed_mgc3x30.git
