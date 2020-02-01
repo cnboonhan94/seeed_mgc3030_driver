@@ -190,8 +190,8 @@ int main(int argc, char **argv)
     float_t sensor_max_dist;
     n.param<float_t>("sensor_max_dist", sensor_max_dist, 0.1);
 
-    ros::Publisher pos_pub = n.advertise<geometry_msgs::PointStamped>(pos_topic_name, 100);
-    ros::Publisher touch_pub = n.advertise<std_msgs::String>(touch_topic_name, 100);
+    ros::Publisher pos_pub = n.advertise<geometry_msgs::PointStamped>(pos_topic_name, 10);
+    ros::Publisher touch_pub = n.advertise<std_msgs::String>(touch_topic_name, 1);
     ros::Subscriber reset_sub = n.subscribe<std_msgs::String>(reset_topic_name,1, reset_callback);
 
     if (hardware_reset() == -1){ 
