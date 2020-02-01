@@ -16721,6 +16721,7 @@ hard_copy	external/ncurses-6.1/include/term.h	/^#define hard_copy /;"	d
 hard_cursor	external/ncurses-6.1/include/term.h	/^#define hard_cursor /;"	d
 hardscroll$x	external/ncurses-6.1/ncurses/Makefile	/^hardscroll$x : $(serial)\/hardscroll.c $(TEST_DEPS)$/;"	t
 hardscroll$x	external/ncurses-6.1/ncurses/Makefile.in	/^hardscroll$x : $(serial)\/hardscroll.c $(TEST_DEPS)$/;"	t
+hardware_reset	src/mgc3030_node.cpp	/^int32_t hardware_reset()$/;"	f	typeref:typename:int32_t
 has_A_COLOR	external/ncurses-6.1/Ada95/samples/ncurses2-attr_test.adb	/^   function  has_A_COLOR (attr : Attributed_Character) return Boolean;$/;"	R	subprogram:ncurses2.attr_test	file:
 has_A_COLOR	external/ncurses-6.1/Ada95/samples/ncurses2-attr_test.adb	/^   function has_A_COLOR (attr : Attributed_Character) return Boolean is$/;"	r	subprogram:ncurses2.attr_test	file:
 has_colors	external/ncurses-6.1/doc/html/man/curs_color.3x.html	/^<\/PRE><H3><a name="h3-has_colors">has_colors<\/a><\/H3><PRE>$/;"	j
@@ -19717,8 +19718,8 @@ ptr_strcodes	external/ncurses-6.1/ncurses/codes.c	/^static NCURSES_CONST char **
 ptr_strfnames	external/ncurses-6.1/ncurses/names.c	/^static NCURSES_CONST char ** ptr_strfnames = 0;$/;"	v	typeref:typename:NCURSES_CONST char **	file:
 ptr_strnames	external/ncurses-6.1/ncurses/names.c	/^static NCURSES_CONST char ** ptr_strnames = 0;$/;"	v	typeref:typename:NCURSES_CONST char **	file:
 ptr_termdata	external/ncurses-6.1/progs/toe.c	/^static TERMDATA *ptr_termdata;	\/* array of terminal data *\/$/;"	v	typeref:typename:TERMDATA *	file:
-publish_location_xyz	src/mgc3030_node.cpp	/^void publish_location_xyz(uint8_t *data, ros::Publisher *pub)$/;"	f	typeref:typename:void
-publish_sensor_msg	src/mgc3030_node.cpp	/^int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub)$/;"	f	typeref:typename:int32_t
+publish_location_xyz	src/mgc3030_node.cpp	/^void publish_location_xyz(uint8_t *data, ros::Publisher *pub, const float_t sensor_max_dist)$/;"	f	typeref:typename:void
+publish_sensor_msg	src/mgc3030_node.cpp	/^int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub, co/;"	f	typeref:typename:int32_t
 publish_touch	src/mgc3030_node.cpp	/^void publish_touch(uint8_t gesture, ros::Publisher *pub)$/;"	f	typeref:typename:void
 publish_touch_event	src/mgc3030_node.cpp	/^void publish_touch_event(uint8_t *data, ros::Publisher *pub)$/;"	f	typeref:typename:void
 pullUpDnControl	external/WiringPi/wiringPi/wiringPi.c	/^void pullUpDnControl (int pin, int pud)$/;"	f	typeref:typename:void
@@ -24718,6 +24719,7 @@ reset_1string	external/ncurses-6.1/include/term.h	/^#define reset_1string /;"	d
 reset_2string	external/ncurses-6.1/include/term.h	/^#define reset_2string /;"	d
 reset_3string	external/ncurses-6.1/include/term.h	/^#define reset_3string /;"	d
 reset_all_colors	external/ncurses-6.1/test/ncurses.c	/^reset_all_colors(void)$/;"	f	typeref:typename:void	file:
+reset_callback	src/mgc3030_node.cpp	/^void reset_callback(const std_msgs::String::ConstPtr& msg){$/;"	f	typeref:typename:void
 reset_char	external/ncurses-6.1/progs/reset_cmd.c	/^#define reset_char(/;"	d	file:
 reset_color_pair	external/ncurses-6.1/ncurses/base/lib_color.c	/^reset_color_pair(NCURSES_SP_DCL0)$/;"	f	typeref:typename:bool	file:
 reset_color_pairs	external/ncurses-6.1/ncurses/base/lib_color.c	/^reset_color_pairs(void)$/;"	f	typeref:typename:void

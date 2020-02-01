@@ -16,9 +16,10 @@ uint8_t pos_cnt;
 uint8_t air_wheel_cnt;
 uint8_t touch_cnt;
 
-
 static const char *touch_info[16] ={"South","West","North","East","Center","South","West","North","East","Center","South",
 "West","North","East","Center"};
+
+static uint8_t data[MAX_RECV_LEN];
 
 void clear_data_periodly(void)
 {
@@ -53,7 +54,7 @@ void clear_data_periodly(void)
     }
 }
 
-void publish_location_xyz(uint8_t *data, ros::Publisher *pub)
+void publish_location_xyz(uint8_t *data, ros::Publisher *pub, const float_t sensor_max_dist)
 {
     uint16_t x=0,y=0,z=0;
     
@@ -66,9 +67,9 @@ void publish_location_xyz(uint8_t *data, ros::Publisher *pub)
     msg.header.seq++;
     msg.header.frame_id = "map";
 
-    msg.point.x = x / 65535.0 * 0.1;
-    msg.point.y = y / 65535.0 * 0.1;
-    msg.point.z = z / 65535.0 * 0.1;
+    msg.point.x = x / 65535.0 * sensor_max_dist;
+    msg.point.y = y / 65535.0 * sensor_max_dist;
+    msg.point.z = z / 65535.0 * sensor_max_dist;
     pub->publish(msg);
 }
 
@@ -115,7 +116,7 @@ void publish_touch_event(uint8_t *data, ros::Publisher *pub)
     }
 }
 
-int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub)
+int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub, const float_t sensor_max_dist)
 {   
     uint8_t *payload = &data[4];
     /*0x91,indicate sensor data output!*/
@@ -124,7 +125,7 @@ int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publishe
         
         /*position data */
         if((payload[0] & 1<<4) && (action & 0x01)){
-            publish_location_xyz(payload, pos_pub);
+            publish_location_xyz(payload, pos_pub, sensor_max_dist);
         }
         /* touch data */
         if(payload[0] & 0x04){
@@ -138,12 +139,9 @@ int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publishe
     return 0;
 }
 
-static uint8_t data[MAX_RECV_LEN];
-int main(int argc, char **argv)
+int32_t hardware_reset()
 {
-    //int32_t ret = 0;
-
-    /*hardware init(i2c gpio...)*/
+    /* hardware initialization */
     if(basic_init()){
         printf("Basic init failed!!\n");
         return -1;
@@ -164,16 +162,47 @@ int main(int argc, char **argv)
         return -1;
     }
     mgc3030_init();
+    return 1;
+}
 
+void reset_callback(const std_msgs::String::ConstPtr& msg){
+    ROS_INFO("Recalibrating...");
+    if(hardware_reset() == -1){
+        ROS_INFO("Recalibration unsuccessful.");
+    } else {
+        ROS_INFO("Recalibration successful.");
+    }
+}
 
+int main(int argc, char **argv)
+{
     /* ros initialization */
-    ros::init(argc, argv, "test");
-    ros::NodeHandle n;
-    ros::Publisher pos_pub = n.advertise<geometry_msgs::PointStamped>("mgc3030/pos", 100);
-    ros::Publisher touch_pub = n.advertise<std_msgs::String>("mgc3030/touch", 100);
+    ros::init(argc, argv, "mgc3030");
+    ros::NodeHandle n("~");
+
+    /* parameters */
+    std::string pos_topic_name;
+    n.param<std::string>("pos_topic_name", pos_topic_name, "pos");
+    std::string touch_topic_name;
+    n.param<std::string>("touch_topic_name", touch_topic_name, "touch");
+    std::string reset_topic_name;
+    n.param<std::string>("reset_topic_name", reset_topic_name, "reset");
+    float_t sensor_max_dist;
+    n.param<float_t>("sensor_max_dist", sensor_max_dist, 0.1);
+
+    ros::Publisher pos_pub = n.advertise<geometry_msgs::PointStamped>(pos_topic_name, 100);
+    ros::Publisher touch_pub = n.advertise<std_msgs::String>(touch_topic_name, 100);
+    ros::Subscriber reset_sub = n.subscribe<std_msgs::String>(reset_topic_name,1, reset_callback);
+
+    if (hardware_reset() == -1){ 
+        ROS_INFO("Hardware has errors, shutting down..");
+        return -1;
+    }
 
     while(ros::ok()){
         // Nothing is sensed
+        ros::spinOnce();
+
         if(mg3030_read_data(data) < 3)
         {
             ROS_INFO("Waiting for input...");
@@ -184,7 +213,7 @@ int main(int argc, char **argv)
 
         // Something is sensed
         ROS_INFO("Input is Found.");
-        publish_sensor_msg(data, &pos_pub, &touch_pub);
+        publish_sensor_msg(data, &pos_pub, &touch_pub, sensor_max_dist);
         memset(data,0,sizeof(data));
         usleep(50000);
         clear_data_periodly();
