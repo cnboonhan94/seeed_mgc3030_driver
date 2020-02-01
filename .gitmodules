@@ -4,3 +4,4 @@
 [submodule "external/Seeed_mgc3x30"]
 	path = external/Seeed_mgc3x30
 	url = https://github.com/Seeed-Studio/Seeed_mgc3x30.git
+    ignore = dirty
