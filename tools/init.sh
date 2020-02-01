@@ -12,7 +12,6 @@ sudo make install
 
 echo "Building and Installing WiringPi..."
 sleep 2
-$PROJECT_ROOT/tools/init.sh
 cd $PROJECT_ROOT/external/WiringPi
 ./build
 

@@ -7626,7 +7626,7 @@ Set_Window	external/ncurses-6.1/Ada95/src/terminal_interface-curses-forms.adb	/^
 Set_Window	external/ncurses-6.1/Ada95/src/terminal_interface-curses-menus.adb	/^   procedure Set_Window (Men : Menu;$/;"	r	package:Terminal_Interface.Curses.Menus	file:
 Set_Window	external/ncurses-6.1/Ada95/src/terminal_interface-curses-text_io.adb	/^   procedure Set_Window (Win : Window)$/;"	r	package:Terminal_Interface.Curses.Text_IO	file:
 Set_Window	external/ncurses-6.1/Ada95/src/terminal_interface-curses-text_io.ads	/^   procedure Set_Window (Win : Window);$/;"	R	packspec:Terminal_Interface.Curses.Text_IO
-Setup instructions	README.md	/^# Setup instructions$/;"	c
+Setup instructions	README.md	/^## Setup instructions$/;"	s
 ShellOut	external/ncurses-6.1/Ada95/samples/ncurses2-util.adb	/^   procedure ShellOut (message : Boolean) is$/;"	r	package:ncurses2.util	file:
 ShellOut	external/ncurses-6.1/Ada95/samples/ncurses2-util.ads	/^   procedure ShellOut (message : Boolean);$/;"	R	packspec:ncurses2.util
 ShellOut	external/ncurses-6.1/test/ncurses.c	/^ShellOut(bool message)$/;"	f	typeref:typename:void	file:
