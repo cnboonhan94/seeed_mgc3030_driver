@@ -7,7 +7,7 @@ These nodes allow you to control a ROS robots such as [turtlesim](http://wiki.ro
 - `tracker_controller_turtle.py`: Tuned to control the turtlesim.
 
 ## Controls
-Currently we are using swipe gestures ("Up", "Down", "Left", "Right") in order to determine the motion direction of the robot. Then, a pressing motion ( using the depth reading of the 3D position readings ) to determine the amount of motion, similar to a gass pedal. 
+Currently we are using swipe gestures ("Up", "Down", "Left", "Right") in order to determine the motion direction of the robot. Then, a pressing motion ( using the depth reading of the 3D position readings ) determines the amount of motion, similar to a gass pedal. 
 
 In order to change the motion direction of the robot, wait 2 seconds without triggering the sensor. I.E, if you swiped forward (To make the robot drive), and you now wish to rotate, wait two seconds first, then swipe sideways. This was implemented to prevent accidentally switching of motion directions.
 
