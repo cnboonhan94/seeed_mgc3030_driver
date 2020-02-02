@@ -1,5 +1,5 @@
 # Controlling turtletim with 3D hand tracking
-[turtle-demo.gif](../turtle-demo.gif)
+![turtle-demo.gif](../turtle-demo.gif)
 These nodes allow you to control a [turtlesim](http://wiki.ros.org/turtlesim) using the output from the Seeed mgc3030 ROS driver. This folder contains the following files:
 - `tracker_controller_basic.py`: Basic template for reading from the ROS driver and triggering commands.
 - `tracker_controller_vel.py`: Further fleshes out the above to publish `cmd_vel` Twist messages, the standard topic for controlling robots in ROS.
