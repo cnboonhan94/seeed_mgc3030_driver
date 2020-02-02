@@ -11,7 +11,7 @@ sudo systemctl disable magni-base.service
 ``` 
 This option has the benefit of already having a `roscore` configured to automatically launch at boot using systemd.
 
-2. Clone this repository into a workspace:
+2. Clone this repository into a workspace on the Pi:
 ```
 cd ~
 mkdir -p hand_tracking_ws/src
