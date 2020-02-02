@@ -36,10 +36,6 @@ class TrackerController:
 
     def start(self):
         while not rospy.is_shutdown():
-            # If no mode, then wait for reading
-            if self.mode == None:
-                continue
-
             # If no new readings, set z reading to maximum
             if (rospy.Time.now() - self.z_last_update) > rospy.Duration(secs=2):
                 rospy.loginfo("No input detected, resetting state")
@@ -47,20 +43,21 @@ class TrackerController:
                 self.mode = None
 
             speed = 1.0 - self.z
+
             if self.mode == None:
                 continue
 
             elif self.mode == "Up": # Drive forward
-                rospy.loginfo("Driving forward at a speed of " + str(speed))
+                rospy.loginfo("Driving forward: " + str(speed))
 
             elif self.mode == "Down": # Drive backward
-                rospy.loginfo("Driving backward at a speed of " + str(speed))
+                rospy.loginfo("Driving backward: " + str(speed))
 
             elif self.mode == "Left": # Rotate Left
-                rospy.loginfo("Rotating left at a speed of " + str(speed))
+                rospy.loginfo("Rotating left: " + str(speed))
 
             elif self.mode == "Right": # Rotate Right
-                rospy.loginfo("Driving right at a speed of " + str(speed))
+                rospy.loginfo("Rotating right: " + str(speed))
             
             rospy.sleep(rospy.Duration(1.0 / self.update_rate))
 
