@@ -1,7 +1,7 @@
 # Seeed mgc3130 ROS driver
 ![demo.gif](demo.gif)
 
-ROS driver for the [Seeed mgc3130 3D hand tracking Pi Shield](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [Github link](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). 
+ROS driver for the [Seeed mgc3130 3D hand tracking Pi Shield](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [Github link](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). Visualization above using a `sensor_max_dist` param set to 5 ( see below ).
 
 ## Setup instructions
 1. Set up a Raspberry Pi with a ROS1 distribution. You can folllow these [instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi). Another option is to use Ubiquity Robotics [Pi Image](https://downloads.ubiquityrobotics.com/pi.html), and run the following:
