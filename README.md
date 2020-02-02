@@ -44,7 +44,16 @@ crontab -e
 // Add the following in the crontab
 SHELL=/bin/bash
 @reboot $HOME/hand_tracking_ws/src/seeed_mgc3030_driver/tools/boot.bash &
+
+// Then reboot!
+sudo reboot
 ```
+
+6. Visualize on external system. On another computer, you could add the following alias:
+```
+alias tracker_rviz="source /opt/ros/kinetic/setup,bash && export ROS_MASTER_URI=http://hand-tracker.local:11311 && rviz"
+```
+Of course, you should change "kinetic" to your ROS distribution, and "hand-tracker.local" to your devices ip or mDNS.
 
 ## Parameters
 - `pos_topic_name`: String, specifies the topic to publish PointStamped messages of the sensor readings. Defaults to `pos`.
