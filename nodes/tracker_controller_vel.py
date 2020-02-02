@@ -49,7 +49,7 @@ class TrackerController:
                 continue
 
             # If no new readings, set z reading to maximum
-            elif (rospy.Time.now() - self.z_last_update) > rospy.Duration(secs=2):
+            elif (rospy.Time.now() - self.z_last_update) > rospy.Duration(secs=1):
                 rospy.loginfo("No input detected, resetting state")
                 self.z = 1.0
                 self.mode = None
