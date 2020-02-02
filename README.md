@@ -1,5 +1,6 @@
 # 3D Gestures, Position + Touch Tracking with ROS!
 ![demo.gif](demo.gif)
+![turtle-demo.gif](turtle-demo.gif)
 
 This is a ROS driver for the [Seeed mgc3130 3D gesture tracking Pi Shield](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [Github link](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). It uses electrical-field for 3-D gesture recognition. 
 
