@@ -41,16 +41,16 @@ class TrackerController:
         while not rospy.is_shutdown():
             vel_msg = Twist()
 
-            # If no new readings, set z reading to maximum
-            if (rospy.Time.now() - self.z_last_update) > rospy.Duration(secs=2):
-                rospy.loginfo("No input detected, resetting state")
-                self.z = 1.0
-                self.mode = None
-
             speed = 1.0 - self.z
 
             if self.mode == None:
                 continue
+
+            # If no new readings, set z reading to maximum
+            elif (rospy.Time.now() - self.z_last_update) > rospy.Duration(secs=2):
+                rospy.loginfo("No input detected, resetting state")
+                self.z = 1.0
+                self.mode = None
 
             elif self.mode == "Up": # Drive forward
                 rospy.loginfo("Driving forward: " + str(speed * self.max_vel))
