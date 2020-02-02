@@ -37,15 +37,13 @@ rviz
 ```
 rostopic pub /mgc3030/reset std_msgs/String "type anything here"
 ```
+5. Set up to launch on boot.
+```
+crontab -e 
 
-5. Set up to start publishing on boot. we will use [`robot_upstart`](https://github.com/clearpathrobotics/robot_upstart):
-Note, still has issues as it seems hardware initialization doesn't work properly at startup.
-``` 
-sudo apt install ros-melodic-robot-upstart # Specify your current ROS distribution here
-echo "source $HOME/hand_tracking_ws/devel/setup.bash" >> ~/.bashrc
-rosrun robot_upstart install seeed_mgc3030_driver/launch/mgc3030.launch --job mgc3030_launch --symlink --setup [path-to-hand-tracking-ws]/devel/setup.bash --logdir /tmp
-sudo systemctl daemon-reload
-sudo systemctl start mgc3030_launch
+// Add the following in the crontab
+SHELL=/bin/bash
+@reboot $HOME/hand_tracking_ws/src/seeed_mgc3030_driver/tools/boot.bash &
 ```
 
 ## Parameters
