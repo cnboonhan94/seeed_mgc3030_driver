@@ -1,9 +1,9 @@
-# 3D Position + Touch Tracking with ROS!
+# 3D Gestures, Position + Touch Tracking with ROS!
 ![demo.gif](demo.gif)
 
 This is a ROS driver for the [Seeed mgc3130 3D gesture tracking Pi Shield](http://wiki.seeedstudio.com/3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130/), [Github link](https://github.com/Seeed-Studio/Seeed_mgc3x30.git). It uses electrical-field for 3-D gesture recognition. 
 
-Currently, only tracking (x, y, z coordinates) and touch events are ported to ROS. Intepretation of these values could be done externally for more complex and custom motions.
+Currently, only tracking (x, y, z coordinates), gesture and touch events are ported to ROS. Intepretation of these values could be done externally for more complex and custom motions.
 
 Visualization above using a `sensor_max_dist` param set to 5.0 ( see below ).
 
@@ -61,6 +61,7 @@ Of course, you should change "kinetic" to your ROS distribution, and "hand-track
 
 ## Parameters
 - `pos_topic_name`: String, specifies the topic to publish PointStamped messages of the sensor readings. Defaults to `pos`.
-- `touch_topic_name`: String, specifies the type of touch input the sensor is reading. Defaults to `touch`.
+- `touch_topic_name`: String, specifies the topic to publish the touch inputs from the sensor. Defaults to `touch`.
+- `gesture_topic_name`: String, specifies the topic to publish the gesture inputs from the sensor. Defaults to `gesture`.
 - `reset_topic_name`: String, publish any message to this topic to force a recalibration of the sensors. This is useful when the environment changes ( such as an additional layer of material being added over the shield ) and the readings go haywire. Defaults to `reset`.
 - `sensor_max_dist`: The maximum value that the sensor can read. Can be set to "amplify" the readings from the sensor. A good value for visualization is 5.0. Defaults to `0.1`, corresponding to the max sensing distance of 0.1 meters.

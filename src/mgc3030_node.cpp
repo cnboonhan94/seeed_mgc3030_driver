@@ -116,7 +116,42 @@ void publish_touch_event(uint8_t *data, ros::Publisher *pub)
     }
 }
 
-int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub, const float_t sensor_max_dist)
+void publish_gesture(std::string gesture, ros::Publisher *pub)
+{
+    std_msgs::String msg;
+    msg.data = gesture;
+    pub->publish(msg);
+}
+
+
+void publish_gesture_event(uint8_t *data, ros::Publisher *pub)
+{
+    uint8_t gesture = 0;
+
+    gesture = data[6];
+    switch(gesture){
+        case 1:
+            //garbage
+        break;
+        case 2:
+        publish_gesture("Right", pub);
+        break;
+        case 3:
+        publish_gesture("Left", pub);
+        break;
+        case 4:
+        publish_gesture("Up", pub);
+        break;
+        case 5:
+        publish_gesture("Down", pub);
+        break;
+        default:
+        publish_gesture("Unknown", pub);
+        break;
+    }
+}
+
+int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publisher *touch_pub, ros::Publisher *gesture_pub, const float_t sensor_max_dist)
 {   
     uint8_t *payload = &data[4];
     /*0x91,indicate sensor data output!*/
@@ -130,6 +165,9 @@ int32_t publish_sensor_msg(uint8_t *data, ros::Publisher *pos_pub, ros::Publishe
         /* touch data */
         if(payload[0] & 0x04){
             publish_touch_event(payload, touch_pub);
+        }
+        if((payload[0] & 0x02) && payload[6] > 0){
+            publish_gesture_event(payload, gesture_pub);
         }
         refresh();
     }
@@ -185,6 +223,8 @@ int main(int argc, char **argv)
     n.param<std::string>("pos_topic_name", pos_topic_name, "pos");
     std::string touch_topic_name;
     n.param<std::string>("touch_topic_name", touch_topic_name, "touch");
+    std::string gesture_topic_name;
+    n.param<std::string>("gesture_topic_name", gesture_topic_name, "gesture");
     std::string reset_topic_name;
     n.param<std::string>("reset_topic_name", reset_topic_name, "reset");
     float_t sensor_max_dist;
@@ -192,6 +232,7 @@ int main(int argc, char **argv)
 
     ros::Publisher pos_pub = n.advertise<geometry_msgs::PointStamped>(pos_topic_name, 10);
     ros::Publisher touch_pub = n.advertise<std_msgs::String>(touch_topic_name, 1);
+    ros::Publisher gesture_pub = n.advertise<std_msgs::String>(gesture_topic_name, 1);
     ros::Subscriber reset_sub = n.subscribe<std_msgs::String>(reset_topic_name,1, reset_callback);
 
     while(1){
@@ -216,7 +257,7 @@ int main(int argc, char **argv)
 
         // Something is sensed
         ROS_INFO("Input is Found.");
-        publish_sensor_msg(data, &pos_pub, &touch_pub, sensor_max_dist);
+        publish_sensor_msg(data, &pos_pub, &touch_pub, &gesture_pub, sensor_max_dist);
         memset(data,0,sizeof(data));
         usleep(50000);
         clear_data_periodly();

@@ -3,6 +3,7 @@
         <param name="pos_topic_name" type="string" value="pos"/>
         <param name="touch_topic_name" type="string" value="touch"/>
         <param name="reset_topic_name" type="string" value="reset"/>
+        <param name="gesture_topic_name" type="string" value="gesture"/>
         <param name="sensor_max_dist" type="double" value="0.1" />
     </node>
 </launch>
