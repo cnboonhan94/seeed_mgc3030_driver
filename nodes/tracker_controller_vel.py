@@ -25,6 +25,8 @@ class TrackerController:
         data = msg.data
         if data not in ["Up", "Down", "Left", "Right"]:
             rospy.loginfo("Error parsing gesture.")
+        elif self.mode is not None:
+            rospy.loginfo("Leave sensor alone for 2 seconds to allow change of mode.")
         else:
             self.mode = data
             self.z = 1.0
