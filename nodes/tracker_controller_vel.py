@@ -98,7 +98,7 @@ if __name__ == "__main__":
     sensor_max_dist = rospy.get_param('sensor_max_dist', 0.1)
     update_rate = rospy.get_param('update_rate', 10.0)
     vel_topic = rospy.get_param('vel_topic', 'cmd_vel')
-    max_vel = rospy.get_param('max_vel', 5.0)
+    max_vel = rospy.get_param('max_vel', 2.0)
     max_angular_vel = rospy.get_param('max_angular_vel', 1.0)
     tracker_controller = TrackerController(pos_topic_name, touch_topic_name, gesture_topic_name, sensor_max_dist, update_rate, vel_topic, max_vel, max_angular_vel)
 
