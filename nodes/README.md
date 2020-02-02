@@ -1,4 +1,4 @@
-# Controlling turtletim with 3D hand tracking
+# Controlling turtlesim with 3D hand tracking
 ![turtle-demo.gif](../turtle-demo.gif)
 
 These nodes allow you to control a ROS robots such as [turtlesim](http://wiki.ros.org/turtlesim) using the output from the Seeed mgc3030 ROS driver. This folder contains the following files:
