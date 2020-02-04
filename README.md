@@ -56,7 +56,7 @@ SHELL=/bin/bash
 // Then reboot!
 sudo reboot
 ```
-Then edit `tools/boot,bash`, if [necessary](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/tools/boot.bash).
+Then edit `tools/boot.bash`, if [necessary](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/tools/boot.bash).
 
 6. **Visualize** the sensor data on external system. On another computer, you could add the following alias:
 ```
