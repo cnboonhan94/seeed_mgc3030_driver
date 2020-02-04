@@ -1,0 +1,17 @@
+<launch>
+    <node name="mgc3030" type="mgc3030_node" pkg="seeed_mgc3030_driver" output="screen">
+        <param name="pos_topic_name" type="string" value="pos"/>
+        <param name="touch_topic_name" type="string" value="touch"/>
+        <param name="reset_topic_name" type="string" value="reset"/>
+        <param name="gesture_topic_name" type="string" value="gesture"/>
+        <param name="sensor_max_dist" type="double" value="0.1" />
+    </node>
+    <node name="tracker_controller" type="tracker_controller_point_vel.py" pkg="seeed_mgc3030_driver" output="screen">
+        <param name="pos_topic_name" type="string" value="pos"/>
+        <param name="sensor_max_dist" type="double" value="0.1" />
+        <param name="update_rate" type="double" value="10.0" />
+        <param name="vel_topic_name" type="string" value="cmd_vel" />
+        <param name="max_vel" type="double" value="2.0" />
+        <param name="max_angular_vel" type="double" value="1.0" />
+    </node>
+</launch>
