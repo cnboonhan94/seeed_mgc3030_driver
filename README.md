@@ -8,7 +8,7 @@ Currently, only tracking (x, y, z coordinates), gesture and touch events are por
 
 Visualization in RVIZ on the top left video is using a `sensor_max_dist` param set to 5.0 ( see below ).
 
-**Check out using using the sensor to control a turtlesim [here](./nodes/README.md).**
+**Check out a controller using the sensor output to control a turtlesim [here](./nodes/README.md).**
 
 ## Setup instructions
 1. **Set up a Raspberry Pi with a ROS1 distribution.** You can folllow these [instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi). Another option is to use Ubiquity Robotics [Pi Image](https://downloads.ubiquityrobotics.com/pi.html), and run the following:
