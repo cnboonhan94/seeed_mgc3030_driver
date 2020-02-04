@@ -11,27 +11,27 @@ Visualization in RVIZ on the top left video is using a `sensor_max_dist` param s
 **Check out using using the sensor to control a turtlesim [here](./nodes/README.md).**
 
 ## Setup instructions
-1. Set up a Raspberry Pi with a ROS1 distribution. You can folllow these [instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi). Another option is to use Ubiquity Robotics [Pi Image](https://downloads.ubiquityrobotics.com/pi.html), and run the following:
+1. **Set up a Raspberry Pi with a ROS1 distribution.** You can folllow these [instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi). Another option is to use Ubiquity Robotics [Pi Image](https://downloads.ubiquityrobotics.com/pi.html), and run the following:
 ```
 sudo systemctl disable pifi.service
 sudo systemctl disable magni-base.service
 ``` 
 This option has the benefit of already having a `roscore` configured to automatically launch at boot using systemd.
 
-2. Clone this repository into a workspace on the Pi:
+2. **Clone this repository into a workspace on the Pi**:
 ```
 cd ~
 mkdir -p hand_tracking_ws/src
 cd hand_tracking_ws/src
 git clone https://github.com/cnboonhan94/seeed_mgc3030_driver.git
 ```
-3. Run the initialization script from the ROS package folder to install dependencies:
+3. **Run the initialization script from the ROS package folder to install dependencies**:
 ```
 cd ~/hand_tracking_ws/src/seeed_mgc3030_driver
 ./tools/init_sh
 ```
 
-3. Build and launch! I use [python-catkin-tools](https://catkin-tools.readthedocs.io/en/latest/installing.html).
+3. **Build and launch!** I use [python-catkin-tools](https://catkin-tools.readthedocs.io/en/latest/installing.html).
 ```
 cd ~/hand_tracking_ws
 catkin build 
@@ -40,12 +40,12 @@ roslaunch seeed_mgc3030_driver mgc3030.launch
 rviz
 ```
 
-4. To force a recalibration, you can do:
+4. To **force a recalibration**, you can do:
 ```
 rostopic pub /mgc3030/reset std_msgs/String "type anything here"
 ```
 
-5. Set up to launch on boot.
+5. Set up to **launch on boot.** This runs a launch file running the driver as well as an example [robot controller](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/nodes/README.md). Run the following on the Pi:
 ```
 crontab -e 
 
@@ -56,16 +56,17 @@ SHELL=/bin/bash
 // Then reboot!
 sudo reboot
 ```
+Then edit `tools/boot,bash`, if [necessary](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/tools/boot.bash).
 
-6. Visualize on external system. On another computer, you could add the following alias:
+6. **Visualize** the sensor data on external system. On another computer, you could add the following alias:
 ```
 alias tracker_rviz="source /opt/ros/kinetic/setup.bash && export ROS_MASTER_URI=http://hand-tracker.local:11311 && rviz"
 ```
 Of course, you should change "kinetic" to your ROS distribution, and "hand-tracker.local" to your devices ip or mDNS.
 
-7. Run roscore on an external system
-For cases where your roscore is on an external robot,( master ) but you want to add this sensor (slave). For this you will need to know the roscore's URI, as well as IP of both master and slave.
-- Edit the file `tools/boot.bash` with the appropriate values of master URI and slave ROS_IP
+7. **Run roscore on an external system**
+For cases where your roscore is on an external robot,( master ) but you want to add this sensor (slave). For this you will need to know the master's URI, as well as IP of the slave.
+- Edit the file [`tools/boot.bash`](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/tools/boot.bash) with the appropriate values of master URI and slave ROS_IP
 - Edit `etc/hosts` of the slave to add an entry for the master URI
 - Run roscore on the external system
 
