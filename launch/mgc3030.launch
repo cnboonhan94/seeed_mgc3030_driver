@@ -1,5 +1,5 @@
 <launch>
-    <node name="mgc3030" type="mgc3030_node" pkg="seeed_mgc3030_driver" output="screen">
+    <node name="mgc3030" type="mgc3030_node" pkg="seeed_mgc3030_driver" output="screen" respawn="true">
         <param name="pos_topic_name" type="string" value="pos"/>
         <param name="touch_topic_name" type="string" value="touch"/>
         <param name="reset_topic_name" type="string" value="reset"/>
