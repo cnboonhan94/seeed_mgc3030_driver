@@ -68,6 +68,7 @@ Of course, you should change "kinetic" to your ROS distribution, and "hand-track
 For cases where your roscore is on an external robot,( master ) but you want to add this sensor (slave). For this you will need to know the master's URI, as well as IP of the slave.
 - Edit the file [`tools/boot.bash`](https://github.com/cnboonhan94/seeed_mgc3030_driver/blob/master/tools/boot.bash) with the appropriate values of master URI and slave ROS_IP
 - Edit `etc/hosts` of the slave to add an entry for the master URI
+- If using the Ubiquity Robotics image, disable roscore.service: `sudo systemctl disable roscore.service`
 - Run roscore on the external system
 
 ## Parameters
