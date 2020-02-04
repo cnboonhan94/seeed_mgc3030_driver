@@ -1,6 +1,6 @@
 <launch>
     <param name="update_rate" type="double" value="10.0" />
-    <param name="vel_topic_name" type="string" value="turtle1/cmd_vel" />
+    <param name="vel_topic_name" type="string" value="cmd_vel" />
     <param name="max_vel" type="double" value="2.0" />
     <param name="max_angular_vel" type="double" value="1.0" />
 
