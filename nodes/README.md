@@ -18,3 +18,12 @@ By placing your hand over the shield at:
 - A "chopping" pose to the left, you can rotate the robot counter-clockwise
 
 The height of your hand above the shield will determine the magnitude of the motion.
+
+To run the above, do the following if you did not set up to launch on startup:
+```
+roslaunch seeed_mgc3030_driver mgc3030_cmd_vel_turtle.launch
+
+# On an external computer
+sudo apt install ros-melodic-turtlesim
+rosrun turtlesim turtlesim_node
+```
