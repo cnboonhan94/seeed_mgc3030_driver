@@ -44,6 +44,7 @@ rviz
 ```
 rostopic pub /mgc3030/reset std_msgs/String "type anything here"
 ```
+
 5. Set up to launch on boot.
 ```
 crontab -e 
@@ -61,6 +62,12 @@ sudo reboot
 alias tracker_rviz="source /opt/ros/kinetic/setup.bash && export ROS_MASTER_URI=http://hand-tracker.local:11311 && rviz"
 ```
 Of course, you should change "kinetic" to your ROS distribution, and "hand-tracker.local" to your devices ip or mDNS.
+
+7. Run roscore on an external system
+For cases where your roscore is on an external robot,( master ) but you want to add this sensor (slave). For this you will need to know the roscore's URI, as well as IP of both master and slave.
+- Edit the file `tools/boot.bash` with the appropriate values of master URI and slave ROS_IP
+- Edit `etc/hosts` of the slave to add an entry for the master URI
+- Run roscore on the external system
 
 ## Parameters
 - `pos_topic_name`: String, specifies the topic to publish PointStamped messages of the sensor readings. Defaults to `pos`.
