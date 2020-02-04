@@ -92,7 +92,7 @@ if __name__ == "__main__":
     pos_topic_name = rospy.get_param('pos_topic_name', 'mgc3030/pos')
     sensor_max_dist = rospy.get_param('sensor_max_dist', 0.1)
     update_rate = rospy.get_param('update_rate', 10.0)
-    vel_topic_name = rospy.get_param('vel_topic_name', 'cmd_vel')
+    vel_topic_name = rospy.get_param('vel_topic_name', 'turtle1/cmd_vel')
     max_vel = rospy.get_param('max_vel', 2.0)
     max_angular_vel = rospy.get_param('max_angular_vel', 1.0)
     tracker_controller = TrackerController(pos_topic_name, sensor_max_dist, update_rate, vel_topic_name, max_vel, max_angular_vel)
